@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 @font-face {
-    font-family: Perpetua;
+    font-family: Perpetua ;
     src: url(../webfonts/Perpetua.otf);
 }
 
@@ -52,7 +52,20 @@ img {
 
 /* 重置連接 */
 a {
+    display: block;
+    /*將預設inline改為block */
     text-decoration: none;
+    color: var(--deep);
+    text-decoration: none;
+}
+
+/* 主要內容共用區 */
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 :root {
@@ -81,7 +94,7 @@ a {
     /* 調整導覽列的高度 */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     /* 添加陰影使其浮起效果 */
-    font-family: Perpetua, "sans-serif";
+    font-family: "Perpetua", "sans-serif";
 }
 
 .navbar {
@@ -96,11 +109,7 @@ a {
 .navbar-transparent {
     background-color: rgba(255, 255, 255, 0.7); /* 半透明白色 */
 }
-.about-section {
-    height: 100vh;
-    background-image: url('your-banner-image.jpg'); /* 替換為你的圖片 */
-    background-size: cover;
-}
+
 .content {
     height: 200vh; /* 讓頁面有足夠高度可以滾動 */
     padding-top: 80px; /* 留空間給固定的導覽列 */
@@ -129,7 +138,7 @@ body {
 }
 
 .logo {
-    height: 40px;
+    height: 50px;
     /* 調整 Logo 高度 */
     width: auto;
 }
@@ -151,7 +160,7 @@ body {
 .nav-links li a {
     text-decoration: none;
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     transition: color 0.3s ease;
 }
 
@@ -189,22 +198,22 @@ body {
     align-items: center;
     color: rgb(29, 29, 29);
     text-align: center;
-    padding-bottom: 150px;
+    padding-bottom: 270px;
     /* 添加padding-top來創造與導覽列的距離 */
 }
 
 .banner-content {
     position: relative;
     /* 確保可以進行位置調整 */
-    width: 35%;
+    width: 28%;
     /* 調整區塊的寬度 */
-    height: 80%;
+    height: 85%;
     margin-left: auto;
     /* 將區塊向右移動 */
     margin-right: 11rem;
     /* 距離右邊框的間距 */
-    margin: 12rem 8rem 0rem auto;
-    padding: 4rem;
+    margin: 25rem 15rem 0rem auto;
+    padding: 4rem 4rem 8rem 4rem;
     /* 內部內容的填充 */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.253);
     /* 添加陰影來提升層次感 */
@@ -223,24 +232,25 @@ body {
 .banner h5 {
     line-height: 1.8; /* 調整行距 */
     margin-top: 20px; /* 距離h1的間距 */
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     width: 80%;
     text-align: left;
 }
 
 .banner .btn {
+    font-family: "Cormorant+Garamond","sans-serif";
     display: inline-block;
     position: absolute;
     top: 420px;
-    left: 60px;
-    margin-top: 20px;
+    left: 65px;
+    margin-top: 60px;
     /* padding: 10px 20px; */
     padding: 0.5rem 2rem;
     background-color: black;
     color: white;
     text-decoration: none;
-    font-size: 1rem;
-    border-radius: 5px;
+    font-size: 1.2rem;
+    border-radius: 2px;
 }
 
 /* 視差滾動效果 */
@@ -250,7 +260,7 @@ body {
 
 /* About Me 區域 */
 .about-section {
-    height: 90vh;
+    height: 100vh;
     padding: 0rem 0rem;
     background-color: var(--background-color);
 }
@@ -289,7 +299,7 @@ body {
     /* 調整水平方向位置 */
     top: 20px;
     /* 調整垂直方向位置 */
-    width: 390px;
+    width: 440px;
     /* 控制容器的寬度 */
     padding: 60px;
 }
@@ -307,7 +317,7 @@ body {
     font-family: "Cormorant+Garamond", "sans-serif";
     font-optical-sizing: auto;
     font-weight: 400;
-    font-size: 2rem;
+    font-size: 60px;
     letter-spacing: .1rem;
 }
 
@@ -318,7 +328,7 @@ body {
     /* 內容文字左右對齊 */
     color: #252525;
     /* 內容文字顏色 */
-    font-size: 16px;
+    font-size: 18px;
     /* 文字大小 */
     line-height: 1.8;
     /* 行高 */
@@ -375,7 +385,6 @@ p {
     /* text-align: center;
 } */
 .portfolio-item {
-    width: 800px; /* 統一設定圖片容器的寬度 */
     position: relative;
     text-align: center;
     margin: 10px;
@@ -436,7 +445,7 @@ p {
     left: 50%;
     transform: translateX(-50%);
     z-index: 2; /* 確保文字在 bar 上方 */
-    font-size: 20px;
+    font-size: 24px;
     margin: 0; /* 移除 margin 讓文字更靠近 bar */
     letter-spacing: .08rem;
     background-color: rgba(255, 255, 255, 0.8); /* 半透明白色背景 */
@@ -477,7 +486,7 @@ footer {
     display: flex;
     justify-content: space-between; /* 讓內容分散在容器的兩側 */
     align-items: center; /* 垂直置中對齊 */
-    padding: 30px 50px;
+    padding: 30px 80px 10px;
     /* max-width: 1200px;
     margin: 20px auto;
     margin-bottom: 60px;
@@ -491,6 +500,9 @@ footer {
     display: flex; /* 讓連結橫向排列 */
     gap: 20px; /* 連結之間的間距 */
     gap: 2rem;
+    font-family: "Cormorant+Garamond","sans-serif";
+    font-optical-sizing: auto;
+    font-size: 1.5rem;
 }
 
 /* .footer-links li {
@@ -533,8 +545,9 @@ footer {
 
 /* 頁腳文字 */
 footer p {
-    margin-top: 0.5rem;
-    font-size: 0.6rem;
+    /* margin-top: 0.5rem; */
+    font-size: 1rem;
+    text-align: center;
 }
 
 
@@ -565,6 +578,14 @@ h5 {
     font-optical-sizing: auto;
     font-weight: 400;
     font-size: 30px;
+}
+
+p {
+    font-family: "Noto+Sans+TC","sans-serif";
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 2rem;
+    text-align: left;
 }
 
 
