@@ -71,7 +71,7 @@ section {
 :root {
     --primary-color: #1f1f1f; /* 主色 */
     --secondary-color: #2ecc71; /* 次色 */
-    --background-color: #e6e6e6f6; /* 背景色 */
+    --background-color: #f1f1f1; /* 背景色 */
     --text-color: #252525; /* 文字顏色 */
     --accent-color: #e74c3c; /* 點綴色 */
 }
