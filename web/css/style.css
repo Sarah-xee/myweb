@@ -545,9 +545,9 @@ footer {
 
 /* 頁腳文字 */
 footer p {
-    /* margin-top: 0.5rem; */
-    font-size: 1rem;
-    text-align: center;
+    padding: 0 0 1rem 3rem;
+    font-size: 0.8rem;
+    text-align: justify;
 }
 
 

@@ -97,8 +97,8 @@ a {
     background-color: rgba(255, 255, 255, 0.7); /* 半透明白色 */
 }
 .content {
-    height: 200vh; /* 讓頁面有足夠高度可以滾動 */
-    padding-top: 80px; /* 留空間給固定的導覽列 */
+    height: 160vh; /* 讓頁面有足夠高度可以滾動 */
+    padding: 80px 0px; /* 留空間給固定的導覽列 */
     background-color: rgb(255, 255, 255);
     flex: 1; /* 讓內容填滿除footer外的區域 */
 }
@@ -220,7 +220,7 @@ body {
     width: 80%;
 }
 .content {
-    padding: 20px;
+    /* padding: 20px; */
     text-align: center;
 }
 
@@ -318,6 +318,9 @@ footer {
     display: flex; /* 讓連結橫向排列 */
     gap: 20px; /* 連結之間的間距 */
     gap: 2rem;
+    font-family: "Cormorant+Garamond","sans-serif";
+    font-optical-sizing: auto;
+    font-size: 1.5rem;
 }
 
 /* .footer-links li {
@@ -360,28 +363,33 @@ footer {
 
 /* 頁腳文字 */
 footer p {
-    margin-top: 0.5rem;
-    font-size: 0.6rem;
+    padding: 0rem 0rem 1rem 3rem;
+    font-size: 0.8rem;
+    text-align: justify;
 }
 
 
 h2 {
-    font-family: "Cormorant SC", system-ui;
+    font-family: "Cormorant+Garamond", "sans-serif";
     font-optical-sizing: auto;
     font-weight: 400;
-    font-size: 60px;
-    text-align: left;
+    font-size: 40px;
+    text-align: center;
+    letter-spacing: .1em;
+    color: #2a1c13;
 }
 
 h3 {
     font-family: "Cormorant+Garamond", "Noto+Sans+TC", "sans-serif";
     font-optical-sizing: auto;
-    font-weight: 400;
-    font-size: 60px;
+    font-weight: 100;
+    font-size: 40px;
+    padding-bottom: 10px;
+    color: #2a1c13;
 }
 
 h4 {
-    font-family: "Cormorant+Garamond","sans-serif";
+    font-family: "Cormorant SC","sans-serif";
     font-optical-sizing: auto;
     font-weight: 500;
     font-size: 30px;
@@ -396,51 +404,101 @@ h5 {
 
 
 
-/* mockup滾動視差 */
-/* 全局樣式設定 */
-body, html {
+/* mockup */
+* {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
-    height: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
 }
 
 .container {
     width: 100%;
-    position: relative;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
 }
 
-/* 每一組文字和圖片的排版 */
 .group {
     display: flex;
-    height: 100vh; /* 每個 section 佔據整個視窗高度 */
+    /* flex-wrap: wrap; */
+    width: 100%;
+    height: 100vh; /* 讓每個區塊填滿整個螢幕的高度 */
+    /* margin-bottom: 20px; */
+    margin: 0;
+    padding: 0;
 }
 
-/* 文字區塊設定 */
-.text-box {
-    width: 50%; /* 左半邊是文字，佔一半寬度 */
+.text-box, .image-box {
+    flex: 1;
+    min-width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    background-color: #fff; /* 設置文字背景顏色 */
-}
-
-/* 圖片區塊設定 */
-.image-box {
-    width: 50%; /* 右半邊是圖片，佔一半寬度 */
+    margin: 0;
+    padding: 0px;
     position: relative;
     overflow: hidden;
 }
 
-.parallax-image {
-    position: absolute;
-    top: 0;
-    left: 0;
+.text-box {
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.text-box h3 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.text-box p {
+    font-size: 18px;
+    color: #666;
+    text-align: center;
+    width: 50%;
+}
+
+.image-box {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.image {
     width: 100%;
-    height: 100%; /* 將圖片高度設置為 100%，避免過大 */
+    height: 100%;
     background-position: center;
     background-size: cover;
-    background-attachment: fixed; /* 簡單的視差效果 */
-    transform: translateY(0); /* 初始位置 */
+    transition: transform 0.5s ease;
+}
+
+
+.image-box:hover .image {
+    transform: scale(1.1); /* 滑動時縮放圖片，強化視覺效果 */
+}
+
+.group:nth-child(even) .text-box {
+    order: 2;
+}
+
+@media (max-width: 768px) {
+    .group {
+        flex-direction: column;
+    }
+    .text-box, .image-box {
+        min-width: 100%;
+        height: 50vh; /* 在小螢幕上保持圖片與文字各占50%高度 */
+    }
 }
