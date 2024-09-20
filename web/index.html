@@ -96,13 +96,13 @@
         const bannerSection = document.querySelector('#about');
 
         const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
+        entries.forEach(entry => {
             if (entry.isIntersecting) {
-              navbar.classList.add('navbar-transparent');
+            navbar.classList.add('navbar-transparent');
             } else {
-              navbar.classList.remove('navbar-transparent');
+            navbar.classList.remove('navbar-transparent');
             }
-          });
+        });
         }, { threshold: 0.5 });
 
         observer.observe(bannerSection);

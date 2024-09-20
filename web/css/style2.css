@@ -108,6 +108,7 @@ html, body {
     margin: 0;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 /* 調整頁面內容不被導覽列遮擋 */
 body {
@@ -391,4 +392,55 @@ h5 {
     font-optical-sizing: auto;
     font-weight: 400;
     font-size: 30px;
+}
+
+
+
+/* mockup滾動視差 */
+/* 全局樣式設定 */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+.container {
+    width: 100%;
+    position: relative;
+}
+
+/* 每一組文字和圖片的排版 */
+.group {
+    display: flex;
+    height: 100vh; /* 每個 section 佔據整個視窗高度 */
+}
+
+/* 文字區塊設定 */
+.text-box {
+    width: 50%; /* 左半邊是文字，佔一半寬度 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff; /* 設置文字背景顏色 */
+}
+
+/* 圖片區塊設定 */
+.image-box {
+    width: 50%; /* 右半邊是圖片，佔一半寬度 */
+    position: relative;
+    overflow: hidden;
+}
+
+.parallax-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* 將圖片高度設置為 100%，避免過大 */
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed; /* 簡單的視差效果 */
+    transform: translateY(0); /* 初始位置 */
 }
